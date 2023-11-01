@@ -8,7 +8,7 @@ using namespace std;
 class Move {
 public:
 	// Default constructor
-	Move() : name("Tackle"), type("Normal"), damage(0) {};
+	Move() : name("Tackle"), type("Normal"), damage(5) {};
 	Move(string nIn, string tIn, int dmg) : name(nIn), type(tIn), damage(dmg) {};
 
 	// Accessors

@@ -32,6 +32,7 @@ int main() {
         });
 
     while (true) {
+        cout << "Enemy encountered! Defeat them to advance!" << endl;
         cout << "Your turn!" << endl;
         cout << "1. Attack" << endl;
         cout << "2. Switch Pokemon" << endl;
@@ -45,16 +46,21 @@ int main() {
 
             // Check if the enemy got hit
             if (initialHP > enemyParty.getCurrent().getHP()) {
-                // Check if user's current Pokemon is Pikachu
-                Pikachu& pikachu = dynamic_cast<Pikachu&>(userParty.getCurrent());
-                pikachu.levelUp();
-                cout << "Pikachu has leveled up!" << endl;
+                Pokemon* currentPokemon = &userParty.getCurrent();
+                Pikachu* pikachu = dynamic_cast<Pikachu*>(currentPokemon);
+                if (pikachu != nullptr) {
+                    // Successfully casted to Pikachu
+                    pikachu->levelUp();
+                    cout << "Pikachu has leveled up!" << endl;
 
-                // Check for evolution
-                if (Raichu* raichu = pikachu.evolve()) {
-                    userParty.replaceCurrentPokemon(*raichu);
-                    cout << "Pikachu has evolved into Raichu!" << endl;
-
+                    // Check for evolution
+                    if (Raichu* raichu = pikachu->evolve()) {
+                        userParty.replaceCurrentPokemon(*raichu);
+                        cout << "Pikachu has evolved into Raichu!" << endl;
+                    }
+                }
+                else {
+                    cout << "The current Pokemon is not a Pikachu." << endl;
                 }
             }
         }
