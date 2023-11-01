@@ -21,6 +21,7 @@ public:
 		buildMoves();
 	};
 
+	virtual ~Pokemon() {}
 
 	// Accessors
 	int getHP() { return HP; };

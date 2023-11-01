@@ -2,6 +2,7 @@
 #include <iostream>
 using namespace std;
 
+// Contructors utilize Pikachu's constructor since Raichu is evolve from Pikachu
 Raichu::Raichu(int hp, int atk, int def, int lvl) : Pokemon("Raichu", "Electric", hp, atk, def) {
     buildMoves();
     setLevel(lvl);

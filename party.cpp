@@ -1,10 +1,13 @@
 #include "party.hpp"
+#include "pokemon.hpp"
+#include "pikachu.hpp"
+#include "raichu.hpp"
 
 void Party::swapPokemon() {
-	cout << "Select a Pokemon to swap to: " << endl;
-	for (i = 0; i < team.size(); i++) {
-		if (i != currentPokemon) {
-			cout << i + 1 << ". " << team[i].getName() << " HP: " << team[i].getHP() << endl;
+    cout << "Select a Pokemon to swap to: " << endl;
+    for (i = 0; i < team.size(); i++) {
+        if (i != currentPokemon) {
+            cout << i + 1 << ". " << team[i].getName() << " HP: " << team[i].getHP() << endl;
         }
     }
     int choice;
@@ -17,4 +20,8 @@ void Party::swapPokemon() {
     else {
         cout << "Invalid choice." << endl;
     }
+}
+
+void Party::replaceCurrentPokemon(Raichu r) {
+
 }

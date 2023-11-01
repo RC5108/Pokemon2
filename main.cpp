@@ -21,7 +21,7 @@ int main() {
         Pikachu(100, 20, 20, 19),
         Pokemon("Jigglypuff", "Normal", 100, 20, 20),
         Pokemon("Meowth", "Normal", 100, 20, 20)
-    });
+        });
     Party enemyParty({
         Pokemon("Pidgey", "Normal", 100, 20, 20),
         Pokemon("Rattata", "Normal", 100, 20, 20),
@@ -29,7 +29,7 @@ int main() {
         Pikachu(100, 20, 20, 19),
         Pokemon("Zubat", "Poison", 100, 20, 20),
         Pokemon("Caterpie", "Bug", 100, 20, 20)
-    });
+        });
 
     while (true) {
         cout << "Your turn!" << endl;
@@ -46,17 +46,15 @@ int main() {
             // Check if the enemy got hit
             if (initialHP > enemyParty.getCurrent().getHP()) {
                 // Check if user's current Pokemon is Pikachu
-                Pikachu* pikachu = dynamic_cast<Pikachu*>(userParty.getCurrent());
-                if (pikachu != nullptr) {
-                    pikachu->levelUp();
-                    cout << "Pikachu has leveled up!" << endl;
+                Pikachu& pikachu = dynamic_cast<Pikachu&>(userParty.getCurrent());
+                pikachu.levelUp();
+                cout << "Pikachu has leveled up!" << endl;
 
-                    // Check for evolution
-                    if (Raichu* raichu = pikachu->evolve()) {
-                        userParty.replaceCurrentPokemon(*raichu);
-                        delete pikachu; // Don't forget to delete the old Pikachu
-                        cout << "Pikachu has evolved into Raichu!" << endl;
-                    }
+                // Check for evolution
+                if (Raichu* raichu = pikachu.evolve()) {
+                    userParty.replaceCurrentPokemon(*raichu);
+                    cout << "Pikachu has evolved into Raichu!" << endl;
+
                 }
             }
         }
@@ -88,6 +86,5 @@ int main() {
             break;
         }
     }
-
 	return 0;
 }

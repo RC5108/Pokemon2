@@ -12,6 +12,11 @@ public:
 		return team[currentPokemon];
 	}
 	void swapPokemon();
+	
+	// Function to replace pikachu with raichu in party
+	// Will have to overload with different pokemon types 
+	void replaceCurrentPokemon(Raichu r);
+	
 
 
 protected:

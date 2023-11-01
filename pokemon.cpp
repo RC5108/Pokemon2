@@ -53,7 +53,6 @@ void Pokemon::performMove(Pokemon& p) {
 	--choice;
 
 	Move& moveUsed = listMoves[choice];
-	Move& moveUsed = listMoves[choice];
 	int damage = moveUsed.calculateDamage(attack, p.defence);
 
 	p.receiveDamage(damage);

@@ -1,6 +1,7 @@
 #ifndef PIKACHU_H
 #define PIKACHU_H
 #include "pokemon.hpp"
+#include "raichu.hpp"
 
 class Pikachu : public Pokemon {
 public:
