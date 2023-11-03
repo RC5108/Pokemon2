@@ -13,7 +13,8 @@
 using namespace std;
 
 int main() {
-
+	
+	srand(time(NULL));
     Party userParty({
         Pokemon("Bulbasaur", "Grass", 100, 20, 20),
         Pokemon("Charmander", "Fire", 100, 20, 20),

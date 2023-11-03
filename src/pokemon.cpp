@@ -65,9 +65,8 @@ void Pokemon::performMove(Pokemon& p) {
 // Function to populate listMoves with 1 to 4 random Move objects
 void Pokemon::buildMoves() {
 	listMoves.clear(); // Clear the existing moves
-
 	// Random number from 1 to 4 to generate the number of moves the Pokemon has
-	int numMoves =  rand() % 4 + 1;
+	int numMoves =  rand() % 3 + 1;
 	// Generate and add random Move objects to the listMoves vector
 	for (int i = 0; i < numMoves; i++) {
 		vector<string> names = {"Tackle", "Obliterate", "Crush", "Sweep", "Flop", "Takedown", "Punch", "Grab"};
