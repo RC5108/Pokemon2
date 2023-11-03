@@ -1,4 +1,5 @@
 #include "pokemon.hpp"
+#include <limits>
 
 string Pokemon::setType(string tp) {
 	if (tp == "water" || tp == "Water") {
@@ -40,7 +41,7 @@ void Pokemon::performMove(Pokemon& p) {
 		cin >> choice;
 		if (cin.fail()) {
 			cin.clear(); // clear input buffer to restore cin to a usable state
-			cin.ignore(INT_MAX, '\n'); // ignore last input
+			cin.ignore(numeric_limits<streamsize>::max(), '\n'); // ignore last input
 			cout << "You can only enter numbers.\n";
 		}
 		else if (choice < 1 || choice > listMoves.size()) {
