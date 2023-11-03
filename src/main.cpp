@@ -1,16 +1,16 @@
 /*
-Marc Baldwin & Miles Kent
-Lab 2
-Program that uses class Pokemon to simulate a basic pokemon battle
-*/
+ * Marc Baldwin & Miles Kent
+ * Lab 2
+ * Program that uses class Pokemon to simulate a basic pokemon battle
+ */
 
 #include "pokemon.hpp"
 #include "party.hpp"
 #include "pikachu.hpp"
 #include "raichu.hpp"
 #include <iostream>
-using namespace std;
 
+using namespace std;
 
 int main() {
 
@@ -33,7 +33,7 @@ int main() {
 
     while (true) {
         cout << "Enemy encountered! Defeat them to advance!" << endl;
-        cout << "Your turn!" << endl;
+        cout << "Your turn! Current Pokemon: " << userParty.getCurrent().getName() << endl;
         cout << "1. Attack" << endl;
         cout << "2. Switch Pokemon" << endl;
         int choice;
